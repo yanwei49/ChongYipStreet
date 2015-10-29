@@ -7,17 +7,52 @@
 //
 
 #import "AppDelegate.h"
+#import "YWCommendViewController.h"
+#import "YWTribuneViewController.h"
+#import "YWSubjectViewController.h"
+#import "YWMineViewController.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
+{
+    UITabBarController *_tabBarC;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    [self createTabBar];
+    
     return YES;
+}
+
+- (void)createTabBar {
+    _tabBarC = [[UITabBarController alloc] init];
+    _tabBarC.tabBar.tintColor = [UIColor redColor];
+    self.window.rootViewController = _tabBarC;
+    
+    NSArray *vcNames = @[@"YWCommendViewController", @"YWTribuneViewController", @"YWSubjectViewController", @"YWMineViewController"];
+    NSArray *vcTitles = @[@"推荐", @"论坛", @"项目", @"我"];
+    NSArray *vcImages = @[@"light_normal.png", @"message_normal.png", @"home_normal.png", @"user_normal.png"];
+    NSArray *vcSelectImages = @[@"light_select.png", @"message_select.png", @"home_select.png", @"user_select.png"];
+    for (NSInteger i=0; i<vcNames.count; i++) {
+        [self createChildViewControllerWithVCName:vcNames[i] title:vcTitles[i] imageName:vcImages[i] selectImageName:vcSelectImages[i]];
+    }
+}
+
+- (void)createChildViewControllerWithVCName:(NSString *)vcName title:(NSString *)title imageName:(NSString *)imageName selectImageName:(NSString *)selectImageName {
+    id vc = [[NSClassFromString(vcName) alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    nav.title = title;
+    nav.tabBarItem.image = [UIImage imageNamed:imageName];
+    nav.tabBarItem.selectedImage = [UIImage imageNamed:selectImageName];
+    [_tabBarC addChildViewController:nav];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
