@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4A10B5CC9EA430874B6E07D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B008C26A0DC6A7E1AB33E83 /* libPods.a */; };
+		7424C1151BE4C1D20053EE68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7424C1141BE4C1D20053EE68 /* Images.xcassets */; };
+		7424C1181BE4C47C0053EE68 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7424C1161BE4C47C0053EE68 /* search@2x.png */; };
+		7424C1191BE4C47C0053EE68 /* search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7424C1171BE4C47C0053EE68 /* search@3x.png */; };
+		7424C1221BE4D0000053EE68 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7424C1211BE4D0000053EE68 /* NoteViewController.m */; };
 		778D92611BDCE89600D47DB3 /* YWMyFirsrtCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 778D92601BDCE89600D47DB3 /* YWMyFirsrtCollectionViewCell.m */; };
 		778D92641BDCFA6A00D47DB3 /* YWMySecondCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 778D92631BDCFA6A00D47DB3 /* YWMySecondCollectionViewCell.m */; };
 		778D92671BDCFD8600D47DB3 /* YWHumanCateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 778D92661BDCFD8600D47DB3 /* YWHumanCateView.m */; };
@@ -28,7 +32,6 @@
 		779E08721BDBDBB3007ED052 /* YWHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 779E08711BDBDBB3007ED052 /* YWHttpManager.m */; };
 		779E08751BDBDBC7007ED052 /* YWDataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 779E08741BDBDBC7007ED052 /* YWDataBaseManager.m */; };
 		779E08781BDBE5D5007ED052 /* YWCustomSegView.m in Sources */ = {isa = PBXBuildFile; fileRef = 779E08771BDBE5D5007ED052 /* YWCustomSegView.m */; };
-		77C2838B1BE26CC8005835FD /* 5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C283761BE26CC8005835FD /* 5@2x.png */; };
 		77C2838C1BE26CC8005835FD /* cang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C283771BE26CC8005835FD /* cang@2x.png */; };
 		77C2838D1BE26CC8005835FD /* dxs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C283781BE26CC8005835FD /* dxs@2x.png */; };
 		77C2838E1BE26CC8005835FD /* geng@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C283791BE26CC8005835FD /* geng@2x.png */; };
@@ -119,6 +122,11 @@
 /* Begin PBXFileReference section */
 		14C8AA012C5EA4D29EA8DCF4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2B008C26A0DC6A7E1AB33E83 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7424C1141BE4C1D20053EE68 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7424C1161BE4C47C0053EE68 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search@2x.png"; path = "Resource/search@2x.png"; sourceTree = "<group>"; };
+		7424C1171BE4C47C0053EE68 /* search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search@3x.png"; path = "Resource/search@3x.png"; sourceTree = "<group>"; };
+		7424C1201BE4D0000053EE68 /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
+		7424C1211BE4D0000053EE68 /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
 		778D925F1BDCE89600D47DB3 /* YWMyFirsrtCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWMyFirsrtCollectionViewCell.h; sourceTree = "<group>"; };
 		778D92601BDCE89600D47DB3 /* YWMyFirsrtCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWMyFirsrtCollectionViewCell.m; sourceTree = "<group>"; };
 		778D92621BDCFA6A00D47DB3 /* YWMySecondCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWMySecondCollectionViewCell.h; sourceTree = "<group>"; };
@@ -160,7 +168,6 @@
 		779E08741BDBDBC7007ED052 /* YWDataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWDataBaseManager.m; sourceTree = "<group>"; };
 		779E08761BDBE5D5007ED052 /* YWCustomSegView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWCustomSegView.h; sourceTree = "<group>"; };
 		779E08771BDBE5D5007ED052 /* YWCustomSegView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWCustomSegView.m; sourceTree = "<group>"; };
-		77C283761BE26CC8005835FD /* 5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "5@2x.png"; path = "Resource/5@2x.png"; sourceTree = "<group>"; };
 		77C283771BE26CC8005835FD /* cang@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cang@2x.png"; path = "Resource/cang@2x.png"; sourceTree = "<group>"; };
 		77C283781BE26CC8005835FD /* dxs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dxs@2x.png"; path = "Resource/dxs@2x.png"; sourceTree = "<group>"; };
 		77C283791BE26CC8005835FD /* geng@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "geng@2x.png"; path = "Resource/geng@2x.png"; sourceTree = "<group>"; };
@@ -274,7 +281,8 @@
 		778D926E1BDD0F2400D47DB3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				77C283761BE26CC8005835FD /* 5@2x.png */,
+				7424C1161BE4C47C0053EE68 /* search@2x.png */,
+				7424C1171BE4C47C0053EE68 /* search@3x.png */,
 				77C283771BE26CC8005835FD /* cang@2x.png */,
 				77C283781BE26CC8005835FD /* dxs@2x.png */,
 				77C283791BE26CC8005835FD /* geng@2x.png */,
@@ -374,6 +382,7 @@
 				779E08291BDBD87A007ED052 /* Assets.xcassets */,
 				779E082B1BDBD87A007ED052 /* LaunchScreen.storyboard */,
 				779E082E1BDBD87A007ED052 /* Info.plist */,
+				7424C1141BE4C1D20053EE68 /* Images.xcassets */,
 				779E081D1BDBD87A007ED052 /* Supporting Files */,
 			);
 			path = ChongYipStreet;
@@ -472,6 +481,8 @@
 		779E08561BDBD920007ED052 /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				7424C1201BE4D0000053EE68 /* NoteViewController.h */,
+				7424C1211BE4D0000053EE68 /* NoteViewController.m */,
 				779E08601BDBD998007ED052 /* YWCommendViewController.h */,
 				779E08611BDBD998007ED052 /* YWCommendViewController.m */,
 			);
@@ -712,8 +723,8 @@
 				77D9BF7C1BE23F31003E91A1 /* home_normal@2x.png in Resources */,
 				77C283931BE26CC8005835FD /* shqn@2x.png in Resources */,
 				77C2839D1BE26CC8005835FD /* yx@2x.png in Resources */,
+				7424C1151BE4C1D20053EE68 /* Images.xcassets in Resources */,
 				77D9BF751BE23F31003E91A1 /* fs@3x.png in Resources */,
-				77C2838B1BE26CC8005835FD /* 5@2x.png in Resources */,
 				77D9BF9A1BE243F7003E91A1 /* home_select@3x.png in Resources */,
 				77D9BF911BE23F31003E91A1 /* xx@3x.png in Resources */,
 				77D9BF791BE23F31003E91A1 /* gd@3x.png in Resources */,
@@ -722,6 +733,7 @@
 				77D9BF771BE23F31003E91A1 /* fz@3x.png in Resources */,
 				77D9BF9D1BE243F7003E91A1 /* message_select@2x.png in Resources */,
 				77D9BF9F1BE243F7003E91A1 /* user_select@3x.png in Resources */,
+				7424C1181BE4C47C0053EE68 /* search@2x.png in Resources */,
 				77D9BF8B1BE23F31003E91A1 /* message_normal@3x.png in Resources */,
 				77D9BF801BE23F31003E91A1 /* human2@2x.png in Resources */,
 				77D9BF7B1BE23F31003E91A1 /* gz@3x.png in Resources */,
@@ -734,6 +746,7 @@
 				77C283901BE26CC8005835FD /* hu@2x.png in Resources */,
 				77D9BF991BE243F7003E91A1 /* home_select@2x.png in Resources */,
 				77D9BF7E1BE23F31003E91A1 /* human1@2x.png in Resources */,
+				7424C1191BE4C47C0053EE68 /* search@3x.png in Resources */,
 				77C2838C1BE26CC8005835FD /* cang@2x.png in Resources */,
 				77D9BF9C1BE243F7003E91A1 /* light_select@3x.png in Resources */,
 				77C2839C1BE26CC8005835FD /* you@2x.png in Resources */,
@@ -825,6 +838,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7424C1221BE4D0000053EE68 /* NoteViewController.m in Sources */,
 				77D4946E1BDC76980062EBAA /* YWMovieTableViewCell.m in Sources */,
 				779E08651BDBD9DA007ED052 /* YWTribuneViewController.m in Sources */,
 				778D92641BDCFA6A00D47DB3 /* YWMySecondCollectionViewCell.m in Sources */,

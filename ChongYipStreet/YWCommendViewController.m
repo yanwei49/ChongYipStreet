@@ -12,7 +12,7 @@
 #import "YWMovieTableViewCell.h"
 #import "YWMovieModel.h"
 #import "YWAdvertistModel.h"
-
+#import "NoteViewController.h"
 @interface YWCommendViewController ()<UITableViewDelegate, UITableViewDataSource, YWCustomSegViewDelegate>
 
 @end
@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"推荐";
+    
     _movieDataSource = [[NSMutableArray alloc] init];
     _advertistDataSource = [[NSMutableArray alloc] init];
     _internetDataSource = [[NSMutableArray alloc] init];
@@ -43,6 +43,18 @@
     
     [self initSubViews];
     [self obtainDataSource];
+    [self layoutNavigationBar];
+}
+
+- (void) layoutNavigationBar{
+    UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 44)];
+    [title setText:NSLocalizedString(@"推荐", nil)];
+    [title setTextColor:[UIColor whiteColor]];
+    self.navigationItem.titleView = title;
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search"] style:UIBarButtonItemStylePlain target:self action:@selector(searchAction:)];
 }
 
 - (void)obtainDataSource {
@@ -50,7 +62,7 @@
         YWMovieModel *model = [[YWMovieModel alloc] init];
         model.iconUrl = @"http://www.51qnz.cn/photo/image/merchant/201510296120828674.png";
         model.textContent = @"我在测试东南角分别随碟附送分别是DHB栋阿红的阿大坏蛋啊很久啊的爱很大大大好大神";
-        model.supportNums = @"3";
+        model.supportNums = @"31111";
         model.collectNums = @"11";
         [_movieDataSource addObject:model];
         
@@ -114,6 +126,11 @@
 
 - (void)initSubViews {
     NSArray *titles = @[@"视频", @"互联网", @"名人", @"经验"];
+    
+
+
+
+    
     _segView = [[YWCustomSegView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 40)];
     _segView.titles = titles;
     _segView.delegate = self;
@@ -157,7 +174,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NoteViewController * noteVC = [[NoteViewController alloc] init];
+    [noteVC setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:noteVC animated:YES];
 }
+
+
 
 #pragma mark - YWCustomSegViewDelegate
 - (void)customSegView:(YWCustomSegView *)view didSelectIndex:(NSInteger)index {
@@ -182,6 +204,9 @@
     }
     [_movieTableView reloadData];
 }
-
+#pragma mark - Action
+- (void) searchAction:(UIBarButtonItem *) searchButton{
+    
+}
 
 @end
