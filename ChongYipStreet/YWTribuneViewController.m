@@ -31,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"论坛";
+
     _dataSource = [[NSMutableArray alloc] init];
     _exchangeDataSource = [[NSMutableArray alloc] init];
     _cooperateDataSource = [[NSMutableArray alloc] init];
@@ -40,8 +40,18 @@
     
     [self initSubViews];
     [self obtainDataSource];
+    [self layoutNavigationBar];
 }
-
+- (void) layoutNavigationBar{
+    UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 44)];
+    [title setText:NSLocalizedString(@"论坛", nil)];
+    [title setTextColor:[UIColor whiteColor]];
+    self.navigationItem.titleView = title;
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search"] style:UIBarButtonItemStylePlain target:self action:@selector(searchAction:)];
+}
 - (void)obtainDataSource {
     for (NSInteger i=0; i<10; i++) {
         YWConsultModel *model = [[YWConsultModel alloc] init];
@@ -167,6 +177,10 @@
     [_tribuneTableView reloadData];
 }
 
+#pragma mark - Action
+- (void) searchAction:(UIBarButtonItem *) searchButton{
+    
+}
 
 
 @end

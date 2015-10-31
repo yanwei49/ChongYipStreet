@@ -45,29 +45,32 @@
         _collectButton.backgroundColor = [UIColor whiteColor];
         [_collectButton setTitle:@"0" forState:UIControlStateNormal];
         [_collectButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [_collectButton setImage:[UIImage imageNamed:@"2"] forState:UIControlStateNormal];
         [_collectButton addTarget:self action:@selector(actionCollect:) forControlEvents:UIControlEventTouchUpInside];
-        _collectButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+        _collectButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
         _collectButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
         [self.contentView addSubview:_collectButton];
         [_collectButton makeConstraints:^(MASConstraintMaker *make) {
-            make.right.bottom.offset(-10);
+            make.right.bottom.offset(-2);
             make.height.offset(25);
+            make.width.offset(60);
         }];
         
         _supportButton = [[UIButton alloc] init];
         _supportButton.backgroundColor = [UIColor whiteColor];
         [_supportButton setTitle:@"0" forState:UIControlStateNormal];
         [_supportButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [_supportButton setImage:[UIImage imageNamed:@"icon"] forState:UIControlStateNormal];
         [_supportButton addTarget:self action:@selector(actionSupport:) forControlEvents:UIControlEventTouchUpInside];
-        _supportButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+        _supportButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
         _supportButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
         [self.contentView addSubview:_supportButton];
         [_supportButton makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.offset(-10);
+            make.bottom.offset(-2);
             make.right.equalTo(_collectButton.mas_left).offset(-10);
             make.height.offset(25);
+            make.width.offset(60);
         }];
-        
     }
     
     return self;
@@ -87,6 +90,16 @@
     _contentLabel.text = model.textContent;
     [_collectButton setTitle:model.collectNums forState:UIControlStateNormal];
     [_supportButton setTitle:model.supportNums forState:UIControlStateNormal];
+    
+    
+    [_collectButton updateConstraints:^(MASConstraintMaker *make) {
+        CGFloat width = [model.collectNums boundingRectWithSize:CGSizeMake(150, 25) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil].size.width + 45;
+        make.width.offset(width);
+    }];
+    [_supportButton updateConstraints:^(MASConstraintMaker *make) {
+        CGFloat width = [model.supportNums boundingRectWithSize:CGSizeMake(150, 25) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil].size.width + 45;
+        make.width.offset(width);
+    }];
 }
 
 
