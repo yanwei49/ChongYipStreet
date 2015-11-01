@@ -42,6 +42,7 @@
 		779F4AB91BE5DFCB004ADCFC /* wei@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 779F4AAB1BE5DFCB004ADCFC /* wei@3x.png */; };
 		779F4ABA1BE5DFCB004ADCFC /* xm@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 779F4AAC1BE5DFCB004ADCFC /* xm@3x.png */; };
 		779F4ABB1BE5DFCB004ADCFC /* yx@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 779F4AAD1BE5DFCB004ADCFC /* yx@3x.png */; };
+		779F4ABD1BE5E8E8004ADCFC /* py@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 779F4ABC1BE5E8E8004ADCFC /* py@2x.png */; };
 		77C2838B1BE26CC8005835FD /* 5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C283761BE26CC8005835FD /* 5@2x.png */; };
 		77C2838C1BE26CC8005835FD /* cang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C283771BE26CC8005835FD /* cang@2x.png */; };
 		77C2838D1BE26CC8005835FD /* dxs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77C283781BE26CC8005835FD /* dxs@2x.png */; };
@@ -188,6 +189,7 @@
 		779F4AAB1BE5DFCB004ADCFC /* wei@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wei@3x.png"; sourceTree = "<group>"; };
 		779F4AAC1BE5DFCB004ADCFC /* xm@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xm@3x.png"; sourceTree = "<group>"; };
 		779F4AAD1BE5DFCB004ADCFC /* yx@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yx@3x.png"; sourceTree = "<group>"; };
+		779F4ABC1BE5E8E8004ADCFC /* py@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "py@2x.png"; sourceTree = "<group>"; };
 		77C283761BE26CC8005835FD /* 5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "5@2x.png"; path = "Resource/5@2x.png"; sourceTree = "<group>"; };
 		77C283771BE26CC8005835FD /* cang@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cang@2x.png"; path = "Resource/cang@2x.png"; sourceTree = "<group>"; };
 		77C283781BE26CC8005835FD /* dxs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dxs@2x.png"; path = "Resource/dxs@2x.png"; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 		778D926E1BDD0F2400D47DB3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				779F4ABC1BE5E8E8004ADCFC /* py@2x.png */,
 				779F4AA01BE5DFCB004ADCFC /* cang@3x.png */,
 				779F4AA11BE5DFCB004ADCFC /* dxs@3x.png */,
 				779F4AA21BE5DFCB004ADCFC /* geng@3x.png */,
@@ -760,6 +763,7 @@
 				779F4AB51BE5DFCB004ADCFC /* shqn@3x.png in Resources */,
 				77D9BF911BE23F31003E91A1 /* xx@3x.png in Resources */,
 				779F4AB61BE5DFCB004ADCFC /* shr@3x.png in Resources */,
+				779F4ABD1BE5E8E8004ADCFC /* py@2x.png in Resources */,
 				77D9BF791BE23F31003E91A1 /* gd@3x.png in Resources */,
 				779F4AB01BE5DFCB004ADCFC /* geng@3x.png in Resources */,
 				77C2839A1BE26CC8005835FD /* wei@2x.png in Resources */,

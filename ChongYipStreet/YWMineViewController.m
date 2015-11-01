@@ -33,8 +33,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBarHidden = YES;
-    _textContents = [[NSMutableArray alloc] initWithArray:@[@"我的消息", @"我的收藏", @"我的积分", @"我的朋友", @"我的粉丝", @"我的投资", @"我的规划", @"项目推广", @"我的创意", @"我的项目"]];
-    _imageContents = [[NSMutableArray alloc] initWithArray:@[@"xx.png", @"sc.png", @"jf.png", @"myIdeal.jpg", @"fs.png", @"fz.png", @"myIdeal.jpg", @"myIdeal.jpg", @"myIdeal.jpg", @"myIdeal.jpg"]];
+    _textContents = [[NSMutableArray alloc] initWithArray:@[@"我的消息", @"我的收藏", @"我的积分", @"我的朋友", @"我的粉丝", @"我的投资", @"关注", @"更多"]];
+    _imageContents = [[NSMutableArray alloc] initWithArray:@[@"xx.png", @"sc.png", @"jf.png", @"py.png", @"fs.png", @"fz.png", @"gz.png", @"gd.png"]];
     _textContents1 = [[NSMutableArray alloc] initWithArray:@[@"我的规划", @"项目推广", @"我的创意", @"我的项目"]];
     _imageContents1 = [[NSMutableArray alloc] initWithArray:@[@"human1.png", @"human2.png", @"human3.png", @"human4.png"]];
 
