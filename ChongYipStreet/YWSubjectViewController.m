@@ -10,6 +10,7 @@
 #import "YWHumanCateView.h"
 #import "YWMyFirstTableViewCell.h"
 #import "YWSubjectSecondTableViewCell.h"
+#import "YWFunctionViewController.h"
 
 @interface YWSubjectViewController ()<UITableViewDelegate, UITableViewDataSource, YWMyFirstTableViewCellDelegate, YWSubjectSecondTableViewCellDelegate, YWHumanCateViewDelegate>
 
@@ -34,6 +35,8 @@
     _textContents1 = [[NSMutableArray alloc] initWithArray:@[@"寻找\n合伙人", @"寻找\n投资人", @"最近\n项目", @"寻找\n项目"]];
     _imageContents1 = [[NSMutableArray alloc] initWithArray:@[@"shr.png", @"tzr.png", @"hhr.png", @"xm.png"]];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"tao.png"] style:UIBarButtonItemStyleDone target:self action:@selector(actionLeft:)];
+    
     [self initSubViews];
 }
 
@@ -55,6 +58,11 @@
     }];
 }
 
+- (void)actionLeft:(UIBarButtonItem *)item {
+    YWFunctionViewController *vc = [[YWFunctionViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark - UITableView Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
