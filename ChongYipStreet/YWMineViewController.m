@@ -47,7 +47,7 @@
     _user.userId = @"1";
     _user.userName = @"随便写的";
     _user.userScore = @"1231";
-    _user.userAvatorUrl = @"http://www.51qnz.cn/photo/image/merchant/201510296120828674.png";
+    _user.userAvatorUrl = @"";
 }
 
 - (void)initSubViews {

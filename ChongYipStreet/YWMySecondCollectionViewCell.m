@@ -21,7 +21,7 @@
         
         _imageView = [[UIImageView alloc] init];
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
-        _imageView.backgroundColor = [UIColor redColor];
+        _imageView.backgroundColor = [UIColor whiteColor];
         _imageView.layer.masksToBounds = YES;
         _imageView.layer.cornerRadius = 30;
         [self.contentView addSubview:_imageView];

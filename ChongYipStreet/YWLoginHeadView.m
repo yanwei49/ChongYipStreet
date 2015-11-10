@@ -25,13 +25,14 @@
         [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionOnClick)]];
         
         _avatorImage = [[UIImageView alloc] init];
-        _avatorImage.backgroundColor = [UIColor whiteColor];
+//        _avatorImage.backgroundColor = [UIColor whiteColor];
         _avatorImage.layer.masksToBounds = YES;
         _avatorImage.layer.cornerRadius = 30;
         [self addSubview:_avatorImage];
         [_avatorImage makeConstraints:^(MASConstraintMaker *make) {
             make.top.left.offset(20);
-            make.width.height.offset(60);
+            make.height.offset(60);
+            make.width.offset(62);
         }];
         
         _nameLabel = [[UILabel alloc] init];
@@ -46,11 +47,11 @@
         }];
         
         _detailImage = [[UIImageView alloc] init];
-        _detailImage.image = [UIImage imageNamed:@"myIdeal.jpg"];
+        _detailImage.image = [UIImage imageNamed:@"right_w.png"];
         [self addSubview:_detailImage];
         [_detailImage makeConstraints:^(MASConstraintMaker *make) {
             make.right.offset(-20);
-            make.height.width.offset(25);
+            make.height.width.offset(20);
             make.centerY.equalTo(_avatorImage.mas_centerY);
         }];
 
@@ -77,7 +78,7 @@
 
 - (void)setUser:(YWUserModel *)user {
     _user = user;
-    [_avatorImage sd_setImageWithURL:[NSURL URLWithString:user.userAvatorUrl] placeholderImage:[UIImage imageNamed:@""]];
+    [_avatorImage sd_setImageWithURL:[NSURL URLWithString:user.userAvatorUrl] placeholderImage:[UIImage imageNamed:@"avator.png"]];
     _nameLabel.text = user.userName;
     _scoreLabel.text = [NSString stringWithFormat:@"积分：%@", user.userScore];
 }

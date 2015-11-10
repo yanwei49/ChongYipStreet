@@ -20,7 +20,7 @@
         _btns = [[NSMutableArray alloc] init];
         
         NSArray *titles = @[@"我的多媒体", @"我的帖子", @"我的项目"];
-        NSArray *images = @[@"myIdeal.jpg", @"myIdeal.jpg", @"myIdeal.jpg"];
+        NSArray *images = @[@"my_medial.png", @"my_teizi.png", @"my_project.png"];
         for (NSInteger i=0; i<titles.count; i++) {
             UIButton *button = [[UIButton alloc] init];
             [button addTarget:self action:@selector(actionOnClick:) forControlEvents:UIControlEventTouchUpInside];

@@ -7,54 +7,49 @@
 //
 
 #import "YWFunctionViewController.h"
+#import "YWHumanCateView.h"
 
-@interface YWFunctionViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface YWFunctionViewController ()<UITableViewDelegate, UITableViewDataSource, YWHumanCateViewDelegate>
 
 @end
 
 @implementation YWFunctionViewController
 {
-    UIView       *_backView;
-    UITableView  *_tableView;
+    UIView           *_backView;
+    UITableView      *_tableView;
+    YWHumanCateView  *_cateView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor redColor];
 
+    [self createSubViews];
 
-
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)createSubViews {
-    _backView = [[UIView alloc] init];
-    _backView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:_backView];
-    [_backView makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.offset(0);
-        make.height.offset(200);
-    }];
+    _cateView = [[YWHumanCateView alloc] initWithFrame:CGRectMake(0, 64, DeviceWidth, 120)];
+    _cateView.delegate = self;
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.backgroundColor = SeparatorColor;
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
     _tableView.tableFooterView = [[UIView alloc] init];
+    _tableView.tableHeaderView = _cateView;
+    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
     [self.view addSubview:_tableView];
     [_tableView makeConstraints:^(MASConstraintMaker *make) {
-        make.left.bottom.right.offset(0);
-        make.top.equalTo(_backView.mas_bottom);
+        make.left.right.equalTo(@0);
+        make.top.offset(64);
+        make.bottom.offset(-49);
     }];
 }
 
 #pragma mark - UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
