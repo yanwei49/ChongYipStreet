@@ -53,7 +53,7 @@
         [_collecButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         [_collecButton setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
         [_collecButton setTitle:@"收藏" forState:UIControlStateNormal];
-        [_collecButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [_collecButton setImage:[UIImage imageNamed:@"2"] forState:UIControlStateNormal];
         [_collecButton setImage:[UIImage imageNamed:@""] forState:UIControlStateSelected];
         _collecButton.titleLabel.font = [UIFont systemFontOfSize:14];
         [_collecButton addTarget:self action:@selector(actionCollect:) forControlEvents:UIControlEventTouchUpInside];
@@ -62,13 +62,14 @@
             make.centerY.equalTo(_typeLabel.mas_centerY);
             make.right.equalTo(-10);
             make.height.offset(20);
+            make.width.offset(60);
         }];
         
         _supportButton = [[UIButton alloc] init];
         _supportButton.backgroundColor = [UIColor whiteColor];
         [_supportButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         [_supportButton setTitle:@"100" forState:UIControlStateNormal];
-        [_supportButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [_supportButton setImage:[UIImage imageNamed:@"icon"] forState:UIControlStateNormal];
         [_supportButton setImage:[UIImage imageNamed:@""] forState:UIControlStateSelected];
         _supportButton.titleLabel.font = [UIFont systemFontOfSize:14];
         [_supportButton addTarget:self action:@selector(actionSupport:) forControlEvents:UIControlEventTouchUpInside];
@@ -77,8 +78,9 @@
             make.centerY.equalTo(_typeLabel.mas_centerY);
             make.right.equalTo(_collecButton.mas_left).offset(-10);
             make.height.offset(25);
+            make.width.offset(60);
         }];
-       
+        
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.backgroundColor = [UIColor whiteColor];
         _titleLabel.text = @"";
@@ -90,7 +92,7 @@
             make.right.offset(-20);
             make.left.equalTo(label.mas_left);
         }];
-
+        
         _userAvator = [[UIImageView alloc] init];
         _userAvator.backgroundColor = [UIColor greenColor];
         _userAvator.layer.masksToBounds = YES;
@@ -134,6 +136,15 @@
     [_supportButton setTitle:model.consultSupportNums forState:UIControlStateNormal];
     _supportButton.selected = model.isSupport;
     _collecButton.selected = model.isCollect;
+    
+    [_contentLabel updateConstraints:^(MASConstraintMaker *make) {
+        CGFloat width = [model.consultTitle boundingRectWithSize:CGSizeMake(150, 25) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil].size.width + 45;
+        make.width.offset(width);
+    }];
+    [_supportButton updateConstraints:^(MASConstraintMaker *make) {
+        CGFloat width = [model.consultSupportNums boundingRectWithSize:CGSizeMake(150, 25) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil].size.width + 45;
+        make.width.offset(width);
+    }];
 }
 
 + (CGFloat)cellHeightForModel:(YWConsultModel *)model {

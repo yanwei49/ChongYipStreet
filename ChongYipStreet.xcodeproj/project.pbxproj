@@ -71,6 +71,9 @@
 		56FC25581BF01E3100D38512 /* my_project@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FC25551BF01E3100D38512 /* my_project@2x.png */; };
 		56FC25591BF01E3100D38512 /* my_teizi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FC25561BF01E3100D38512 /* my_teizi@2x.png */; };
 		56FC255B1BF01F4C00D38512 /* avator.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FC255A1BF01F4C00D38512 /* avator.png */; };
+		74AEE6291BF253350036C076 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE6261BF253350036C076 /* SearchViewController.m */; };
+		74AEE62A1BF253350036C076 /* EqualSpaceFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE6281BF253350036C076 /* EqualSpaceFlowLayout.m */; };
+		74AEE62D1BF254D40036C076 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE62C1BF254D40036C076 /* NoteViewController.m */; };
 		778D92611BDCE89600D47DB3 /* YWMyFirsrtCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 778D92601BDCE89600D47DB3 /* YWMyFirsrtCollectionViewCell.m */; };
 		778D92641BDCFA6A00D47DB3 /* YWMySecondCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 778D92631BDCFA6A00D47DB3 /* YWMySecondCollectionViewCell.m */; };
 		778D92671BDCFD8600D47DB3 /* YWHumanCateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 778D92661BDCFD8600D47DB3 /* YWHumanCateView.m */; };
@@ -238,6 +241,12 @@
 		56FC25551BF01E3100D38512 /* my_project@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_project@2x.png"; sourceTree = "<group>"; };
 		56FC25561BF01E3100D38512 /* my_teizi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_teizi@2x.png"; sourceTree = "<group>"; };
 		56FC255A1BF01F4C00D38512 /* avator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avator.png; sourceTree = "<group>"; };
+		74AEE6251BF253350036C076 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		74AEE6261BF253350036C076 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		74AEE6271BF253350036C076 /* EqualSpaceFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EqualSpaceFlowLayout.h; sourceTree = "<group>"; };
+		74AEE6281BF253350036C076 /* EqualSpaceFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EqualSpaceFlowLayout.m; sourceTree = "<group>"; };
+		74AEE62B1BF254D40036C076 /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
+		74AEE62C1BF254D40036C076 /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
 		778D925F1BDCE89600D47DB3 /* YWMyFirsrtCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWMyFirsrtCollectionViewCell.h; sourceTree = "<group>"; };
 		778D92601BDCE89600D47DB3 /* YWMyFirsrtCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWMyFirsrtCollectionViewCell.m; sourceTree = "<group>"; };
 		778D92621BDCFA6A00D47DB3 /* YWMySecondCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWMySecondCollectionViewCell.h; sourceTree = "<group>"; };
@@ -506,6 +515,17 @@
 			name = project_1;
 			sourceTree = "<group>";
 		};
+		74AEE6241BF253230036C076 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				74AEE6251BF253350036C076 /* SearchViewController.h */,
+				74AEE6261BF253350036C076 /* SearchViewController.m */,
+				74AEE6271BF253350036C076 /* EqualSpaceFlowLayout.h */,
+				74AEE6281BF253350036C076 /* EqualSpaceFlowLayout.m */,
+			);
+			name = SearchView;
+			sourceTree = "<group>";
+		};
 		778D926E1BDD0F2400D47DB3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,6 +674,8 @@
 		779E08561BDBD920007ED052 /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				74AEE62B1BF254D40036C076 /* NoteViewController.h */,
+				74AEE62C1BF254D40036C076 /* NoteViewController.m */,
 				779E08601BDBD998007ED052 /* YWCommendViewController.h */,
 				779E08611BDBD998007ED052 /* YWCommendViewController.m */,
 			);
@@ -760,6 +782,7 @@
 		779E086C1BDBDB68007ED052 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				74AEE6241BF253230036C076 /* SearchView */,
 				779E086D1BDBDB91007ED052 /* YWParser.h */,
 				779E086E1BDBDB91007ED052 /* YWParser.m */,
 				779E08701BDBDBB3007ED052 /* YWHttpManager.h */,
@@ -1067,6 +1090,7 @@
 				779E08651BDBD9DA007ED052 /* YWTribuneViewController.m in Sources */,
 				778D92641BDCFA6A00D47DB3 /* YWMySecondCollectionViewCell.m in Sources */,
 				779E08751BDBDBC7007ED052 /* YWDataBaseManager.m in Sources */,
+				74AEE6291BF253350036C076 /* SearchViewController.m in Sources */,
 				778D92711BDD2F5E00D47DB3 /* YWSubjectDetailViewController.m in Sources */,
 				778D926D1BDD03E200D47DB3 /* YWSubjectSecondTableViewCell.m in Sources */,
 				778D926A1BDD035600D47DB3 /* YWSubjectSecondCollectionViewCell.m in Sources */,
@@ -1075,6 +1099,7 @@
 				77D494771BDC80CF0062EBAA /* YWConsultTableViewCell.m in Sources */,
 				77D484AD1BDCE45E002B66B0 /* YWMyFirstTableViewCell.m in Sources */,
 				77D484A51BDCA1F7002B66B0 /* YWLoginHeadView.m in Sources */,
+				74AEE62A1BF253350036C076 /* EqualSpaceFlowLayout.m in Sources */,
 				77D4947A1BDC80DF0062EBAA /* YWConsultModel.m in Sources */,
 				779E08221BDBD87A007ED052 /* AppDelegate.m in Sources */,
 				779E081F1BDBD87A007ED052 /* main.m in Sources */,
@@ -1086,6 +1111,7 @@
 				779E08621BDBD998007ED052 /* YWCommendViewController.m in Sources */,
 				779E086F1BDBDB91007ED052 /* YWParser.m in Sources */,
 				56F200A31BE831D200E904B0 /* YWFunctionViewController.m in Sources */,
+				74AEE62D1BF254D40036C076 /* NoteViewController.m in Sources */,
 				77D494691BDC6B210062EBAA /* YWAdvertistView.m in Sources */,
 				77D484A21BDC906A002B66B0 /* YWUserModel.m in Sources */,
 				77D484AA1BDCAA4E002B66B0 /* YWCateView.m in Sources */,
