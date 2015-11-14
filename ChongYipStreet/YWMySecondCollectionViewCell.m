@@ -33,7 +33,7 @@
         }];
         
         _label = [[UILabel alloc] init];
-        _label.font = [UIFont systemFontOfSize:14];
+        _label.font = [UIFont boldSystemFontOfSize:17];
         _label.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:_label];
         [_label makeConstraints:^(MASConstraintMaker *make) {

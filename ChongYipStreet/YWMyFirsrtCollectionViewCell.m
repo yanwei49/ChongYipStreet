@@ -16,11 +16,8 @@
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    if (self) {
-        self.backgroundColor = [UIColor whiteColor];
-        
+    if (self) {        
         _imageView = [[UIImageView alloc] init];
-        _imageView.backgroundColor = [UIColor whiteColor];
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
 //        _imageView.layer.masksToBounds = YES;
 //        _imageView.layer.cornerRadius = 15;
@@ -36,7 +33,6 @@
         }];
         
         _label = [[UILabel alloc] init];
-        _label.backgroundColor = [UIColor whiteColor];
         _label.font = [UIFont systemFontOfSize:14];
         _label.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:_label];
@@ -49,6 +45,10 @@
     }
     
     return self;
+}
+
+- (void)setTextColor:(UIColor *)textColor {
+    _label.textColor = textColor;
 }
 
 - (void)setTitle:(NSString *)title {

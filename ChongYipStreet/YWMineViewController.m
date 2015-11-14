@@ -12,6 +12,7 @@
 #import "YWCateView.h"
 #import "YWMyFirstTableViewCell.h"
 #import "YWMySecondTableViewCell.h"
+#import "YWMyDetailViewController.h"
 
 @interface YWMineViewController ()<UITableViewDelegate, UITableViewDataSource, YWMySecondTableViewCellDelegate, YWMyFirstTableViewCellDelegate, YWCateViewDelegate, YWLoginHeadViewDelegate>
 
@@ -148,6 +149,7 @@
 - (void)myFirstTableViewCell:(YWMyFirstTableViewCell *)cell didSlelectItemIndex:(NSInteger)index {
     NSLog(@"选中了：%@", _textContents[index]);
 }
+
 #pragma mark - YWMySecondTableViewCellDelegate
 - (void)mySecondTableViewCell:(YWMySecondTableViewCell *)cell didSlelectItemIndex:(NSInteger)index {
     NSLog(@"选中了：%@", _textContents1[index]);
@@ -161,6 +163,9 @@
 #pragma mark - YWLoginHeadViewDelegate
 - (void)loginHeadViewOnClick:(YWLoginHeadView *)cell {
     NSLog(@"点击了头像");
+    YWMyDetailViewController *vc = [[YWMyDetailViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

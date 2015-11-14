@@ -12,7 +12,7 @@
 #import "YWSubjectSecondTableViewCell.h"
 #import "YWFunctionViewController.h"
 
-@interface YWSubjectViewController ()<UITableViewDelegate, UITableViewDataSource, YWMyFirstTableViewCellDelegate, YWSubjectSecondTableViewCellDelegate, YWHumanCateViewDelegate>
+@interface YWSubjectViewController ()<UITableViewDelegate, UITableViewDataSource, YWMyFirstTableViewCellDelegate, YWSubjectSecondTableViewCellDelegate, YWHumanCateViewDelegate, YWFunctionViewControllerDelegate>
 
 @end
 
@@ -25,23 +25,25 @@
     NSMutableArray             *_textContents1;
     NSMutableArray             *_imageContents1;
     YWFunctionViewController   *_funVC;
-    BOOL                        _isShowFunView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
     self.title = @"项目";
     _textContents = [[NSMutableArray alloc] initWithArray:@[@"网店", @"微店", @"互联网", @"生活", @"服装", @"游戏", @"餐饮", @"更多"]];
     _imageContents = [[NSMutableArray alloc] initWithArray:@[@"tao.png", @"wei.png", @"hu.png", @"sheng.png", @"nv.png", @"you.png", @"cang.png", @"geng.png"]];
     _textContents1 = [[NSMutableArray alloc] initWithArray:@[@"寻找\n合伙人", @"寻找\n投资人", @"最近\n项目", @"寻找\n项目"]];
     _imageContents1 = [[NSMutableArray alloc] initWithArray:@[@"shr.png", @"tzr.png", @"hhr.png", @"xm.png"]];
-    _isShowFunView = NO;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"my_project.png"] style:UIBarButtonItemStyleDone target:self action:@selector(actionLeft:)];
     
     [self initSubViews];
     _funVC = [[YWFunctionViewController alloc] init];
+    _funVC.delegate = self;
     _funVC.view.frame = self.view.bounds;
     [self.view insertSubview:_funVC.view atIndex:0];
 }
@@ -54,6 +56,7 @@
     _tableView.backgroundColor = SeparatorColor;
     _tableView.tableFooterView = [[UIView alloc] init];
     _tableView.tableHeaderView = _cateView;
+    _tableView.showsVerticalScrollIndicator = NO;
     _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     _tableView.dataSource = self;
     _tableView.delegate = self;
@@ -66,8 +69,19 @@
 }
 
 - (void)actionLeft:(UIBarButtonItem *)item {
-    _isShowFunView = !_isShowFunView;
-    _isShowFunView ? [self.view bringSubviewToFront:_funVC.view] : [self.view sendSubviewToBack:_funVC.view];
+    [self.view bringSubviewToFront:_funVC.view];
+    self.navigationController.navigationBarHidden = YES;
+}
+
+#pragma mark - YWFunctionViewControllerDelegate
+- (void)functionViewControllerDidSelectBack {
+    [self.view insertSubview:_funVC.view atIndex:0];
+    self.navigationController.navigationBarHidden = NO;
+    [_tableView remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(@0);
+        make.top.offset(44);
+        make.bottom.offset(-49);
+    }];
 }
 
 #pragma mark - UITableView Delegate

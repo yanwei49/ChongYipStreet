@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class YWFunctionViewController;
+
+@protocol YWFunctionViewControllerDelegate <NSObject>
+
+- (void)functionViewControllerDidSelectBack;
+
+@end
 @interface YWFunctionViewController : UIViewController
+
+@property (nonatomic, assign) id<YWFunctionViewControllerDelegate> delegate;
 
 @end
