@@ -63,7 +63,14 @@
     [self layoutView];
     [self loadData];
 }
-
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.translucent = NO;
+}
+- (void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.translucent = YES;
+}
 - (void) loadData{
     
     for(int i = 0; i < 12; i++){
@@ -78,7 +85,7 @@
 
 
 - (void) layoutView{
-    self.navigationController.navigationBar.translucent = NO;
+    
     
     UIView * searchView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DeviceWidth, 40)];
     [searchView setBackgroundColor:[UIColor groupTableViewBackgroundColor]];

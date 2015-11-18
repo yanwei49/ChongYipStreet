@@ -14,6 +14,11 @@
 #import "YWAdvertistModel.h"
 #import "NoteViewController.h"
 #import "SearchViewController.h"
+#import "SubTitleView.h"
+
+#define TITLES       @[@"视频", @"互联网", @"名人", @"经验"] //标题
+#define SUB_TITLES   @[@"寻找", @"找方案", @"找团队", @"交流圈"]
+#define SUB_IMAGES   @[@"cang@3x", @"cang@3x", @"cang@3x", @"cang@3x"]
 @interface YWCommendViewController ()<UITableViewDelegate, UITableViewDataSource, YWCustomSegViewDelegate>
 
 @end
@@ -21,6 +26,8 @@
 @implementation YWCommendViewController
 {
     YWCustomSegView    *_segView;
+    UIView             *_headerView;
+    SubTitleView       *_subTitleView;
     YWAdvertistView    *_advertistView;
     UITableView        *_movieTableView;
     NSMutableArray     *_movieDataSource;
@@ -57,6 +64,41 @@
     [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"5@2x"] style:UIBarButtonItemStylePlain target:self action:@selector(searchAction:)];
 }
+- (void)initSubViews {
+    
+    _segView = [[YWCustomSegView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 40)];
+    _segView.titles = TITLES;
+    _segView.delegate = self;
+    [self.view addSubview:_segView];
+    
+    _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DeviceWidth, 305)];
+    [_headerView setBackgroundColor:[UIColor colorWithWhite:0.5f alpha:0.7f]];
+    _advertistView = [[YWAdvertistView alloc] initWithFrame:CGRectMake(0, 0, DeviceWidth, 200)];
+    _advertistView.advertistArray = @[];
+    [_headerView addSubview:_advertistView];
+    
+    
+    _subTitleView = [[SubTitleView alloc] initWithFrame:CGRectMake(0, 200, DeviceWidth, 100) titles:SUB_TITLES images:SUB_IMAGES];
+    [_subTitleView setBackgroundColor:[UIColor whiteColor]];
+    __weak YWCommendViewController * weakSelf = self;
+    _subTitleView.selectTitleBolck = ^(NSInteger selectIndex){
+        [weakSelf SubTitleSelectIndex:selectIndex];
+    };
+    [_headerView addSubview:_subTitleView];
+    
+    _movieTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    _movieTableView.backgroundColor = [UIColor whiteColor];
+    _movieTableView.tableFooterView = [[UIView alloc] init];
+    _movieTableView.tableHeaderView = _headerView;
+    _movieTableView.dataSource = self;
+    _movieTableView.delegate = self;
+    [self.view addSubview:_movieTableView];
+    [_movieTableView makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(@0);
+        make.top.equalTo(_segView.mas_bottom);
+        make.bottom.offset(-49);
+    }];
+}
 
 - (void)obtainDataSource {
     for (NSInteger i=0; i<10; i++) {
@@ -89,33 +131,6 @@
     
     [_movieTableView reloadData];
 }
-
-- (void)initSubViews {
-    NSArray *titles = @[@"视频", @"互联网", @"名人", @"经验"];
-    
-    
-    _segView = [[YWCustomSegView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 40)];
-    _segView.titles = titles;
-    _segView.delegate = self;
-    [self.view addSubview:_segView];
-    
-    _advertistView = [[YWAdvertistView alloc] initWithFrame:CGRectMake(0, 0, DeviceWidth, 200)];
-    _advertistView.advertistArray = @[];
-    
-    _movieTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    _movieTableView.backgroundColor = [UIColor whiteColor];
-    _movieTableView.tableFooterView = [[UIView alloc] init];
-    _movieTableView.tableHeaderView = _advertistView;
-    _movieTableView.dataSource = self;
-    _movieTableView.delegate = self;
-    [self.view addSubview:_movieTableView];
-    [_movieTableView makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(@0);
-        make.top.equalTo(_segView.mas_bottom);
-        make.bottom.offset(-49);
-    }];
-}
-
 #pragma mark - UITableView Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _dataSource.count;
@@ -147,7 +162,7 @@
 #pragma mark - YWCustomSegViewDelegate
 - (void)customSegView:(YWCustomSegView *)view didSelectIndex:(NSInteger)index {
     if (index == 0) {
-        _movieTableView.tableHeaderView = _advertistView;
+        _movieTableView.tableHeaderView = _headerView;
         _dataSource = _movieDataSource;
     }else {
         _movieTableView.tableHeaderView = nil;
@@ -166,6 +181,11 @@
         }
     }
     [_movieTableView reloadData];
+}
+
+#pragma mark - SubTitleSelectIndex
+- (void) SubTitleSelectIndex:(NSInteger) index{
+    NSLog(@"%ld",index);
 }
 #pragma mark - Action
 - (void) searchAction:(UIBarButtonItem *) searchButton{

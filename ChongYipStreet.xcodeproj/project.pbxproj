@@ -76,6 +76,7 @@
 		56FC25581BF01E3100D38512 /* my_project@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FC25551BF01E3100D38512 /* my_project@2x.png */; };
 		56FC25591BF01E3100D38512 /* my_teizi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FC25561BF01E3100D38512 /* my_teizi@2x.png */; };
 		56FC255B1BF01F4C00D38512 /* avator.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FC255A1BF01F4C00D38512 /* avator.png */; };
+		74039E6E1BFCB177002D1105 /* SubTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74039E6D1BFCB177002D1105 /* SubTitleView.m */; };
 		74AEE6291BF253350036C076 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE6261BF253350036C076 /* SearchViewController.m */; };
 		74AEE62A1BF253350036C076 /* EqualSpaceFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE6281BF253350036C076 /* EqualSpaceFlowLayout.m */; };
 		74AEE62D1BF254D40036C076 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE62C1BF254D40036C076 /* NoteViewController.m */; };
@@ -255,6 +256,8 @@
 		56FC25551BF01E3100D38512 /* my_project@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_project@2x.png"; sourceTree = "<group>"; };
 		56FC25561BF01E3100D38512 /* my_teizi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_teizi@2x.png"; sourceTree = "<group>"; };
 		56FC255A1BF01F4C00D38512 /* avator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avator.png; sourceTree = "<group>"; };
+		74039E6C1BFCB177002D1105 /* SubTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubTitleView.h; sourceTree = "<group>"; };
+		74039E6D1BFCB177002D1105 /* SubTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubTitleView.m; sourceTree = "<group>"; };
 		74AEE6251BF253350036C076 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		74AEE6261BF253350036C076 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		74AEE6271BF253350036C076 /* EqualSpaceFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EqualSpaceFlowLayout.h; sourceTree = "<group>"; };
@@ -532,10 +535,10 @@
 		74AEE6241BF253230036C076 /* SearchView */ = {
 			isa = PBXGroup;
 			children = (
-				74AEE6251BF253350036C076 /* SearchViewController.h */,
-				74AEE6261BF253350036C076 /* SearchViewController.m */,
 				74AEE6271BF253350036C076 /* EqualSpaceFlowLayout.h */,
 				74AEE6281BF253350036C076 /* EqualSpaceFlowLayout.m */,
+				74AEE6251BF253350036C076 /* SearchViewController.h */,
+				74AEE6261BF253350036C076 /* SearchViewController.m */,
 			);
 			name = SearchView;
 			sourceTree = "<group>";
@@ -676,6 +679,8 @@
 		779E08551BDBD91C007ED052 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				74039E6C1BFCB177002D1105 /* SubTitleView.h */,
+				74039E6D1BFCB177002D1105 /* SubTitleView.m */,
 				779E08761BDBE5D5007ED052 /* YWCustomSegView.h */,
 				779E08771BDBE5D5007ED052 /* YWCustomSegView.m */,
 				77D494671BDC6B210062EBAA /* YWAdvertistView.h */,
@@ -1122,6 +1127,7 @@
 				778D92671BDCFD8600D47DB3 /* YWHumanCateView.m in Sources */,
 				77D494771BDC80CF0062EBAA /* YWConsultTableViewCell.m in Sources */,
 				56C7AAA31BF6D03500107FCB /* YWLoginHeadDetailView.m in Sources */,
+				74039E6E1BFCB177002D1105 /* SubTitleView.m in Sources */,
 				77D484AD1BDCE45E002B66B0 /* YWMyFirstTableViewCell.m in Sources */,
 				77D484A51BDCA1F7002B66B0 /* YWLoginHeadView.m in Sources */,
 				74AEE62A1BF253350036C076 /* EqualSpaceFlowLayout.m in Sources */,
